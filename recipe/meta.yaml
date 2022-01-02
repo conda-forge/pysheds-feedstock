@@ -1,5 +1,5 @@
 {% set name = "pysheds" %}
-{% set version = "0.2.7" %}
+{% set version = "0.3" %}
 
 package:
   name: {{ name|lower }}
@@ -22,6 +22,7 @@ requirements:
     - pip
   run:
     - python
+    - numba
     - numpy
     - pandas
     - scipy
@@ -35,6 +36,8 @@ test:
   imports:
     - pysheds
     - pysheds.grid
+    - pysheds.view
+    - pysheds.io
 
 about:
   home: http://github.com/mdbartos/pysheds
