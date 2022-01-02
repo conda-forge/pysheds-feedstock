@@ -1,5 +1,5 @@
 {% set name = "pysheds" %}
-{% set version = "0.2.7" %}
+{% set version = "0.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 2a22d43d408bebe759704f20f9ae0560566a85ea545d644f65ad44978d6a88ac
+  sha256: 554b31e8ba2206f2a45d99c3982861b563e1528c3d1c3e4f63de7f3271d4ce5e
 
 build:
-  number: 1
+  number: 0
   skip: true  # [py2k]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
@@ -22,6 +22,7 @@ requirements:
     - pip
   run:
     - python
+    - numba
     - numpy
     - pandas
     - scipy
@@ -35,6 +36,8 @@ test:
   imports:
     - pysheds
     - pysheds.grid
+    - pysheds.view
+    - pysheds.io
 
 about:
   home: http://github.com/mdbartos/pysheds
