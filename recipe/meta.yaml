@@ -1,5 +1,5 @@
 {% set name = "pysheds" %}
-{% set version = "0.3.2" %}
+{% set version = "0.3.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 6cc839302040557194233513112e86ee3bf8dc4a08768b26b6a2273d424880a8
+  sha256: 0bbc0c771bd345bf88a95e88ba6dcedf6adc6a3c9fae42f721c6af5abd7a8309
 
 build:
   number: 0
