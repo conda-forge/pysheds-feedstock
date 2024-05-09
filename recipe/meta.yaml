@@ -16,7 +16,7 @@ build:
 
 requirements:
   build:
-    - {{ stdlib("c") }}
+    - {{ stdlib('c') }}
     - {{ compiler('c') }}
   host:
     - python >=3.6
