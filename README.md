@@ -3,9 +3,9 @@ About pysheds-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pysheds-feedstock/blob/main/LICENSE.txt)
 
-Home: http://github.com/mdbartos/pysheds
+Home: https://github.com/mdbartos/pysheds
 
-Package license: GPL-3.0
+Package license: GPL-3.0-or-later
 
 Summary: Simple and fast watershed delineation in python.
 
