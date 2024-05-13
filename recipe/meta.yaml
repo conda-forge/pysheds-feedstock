@@ -10,14 +10,20 @@ source:
   sha256: 039d89e3f798e75649b46bc01ca04f0465ea092ba58f63de124cf6bd5cfa1a4b
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
     - {{ stdlib('c') }}
     - {{ compiler('c') }}
+    - python                              # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}  # [build_platform != target_platform]
+    - cython                              # [build_platform != target_platform]
+    - numpy                               # [build_platform != target_platform]
   host:
+    - cython
+    - numpy
     - python
     - pip
   run:
@@ -26,7 +32,7 @@ requirements:
     - geojson
     - looseversion
     - numba
-    - numpy
+    - {{ pin_compatible('numpy') }}
     - pandas
     - pyproj
     - rasterio >=1
