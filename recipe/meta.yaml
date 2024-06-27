@@ -32,6 +32,7 @@ requirements:
     - geojson
     - looseversion
     - numba
+    - numpy
     - pandas
     - pyproj
     - rasterio >=1
