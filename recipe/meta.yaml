@@ -10,7 +10,7 @@ source:
   sha256: 039d89e3f798e75649b46bc01ca04f0465ea092ba58f63de124cf6bd5cfa1a4b
 
 build:
-  number: 1
+  number: 2
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
@@ -32,7 +32,6 @@ requirements:
     - geojson
     - looseversion
     - numba
-    - {{ pin_compatible('numpy') }}
     - pandas
     - pyproj
     - rasterio >=1
