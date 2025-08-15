@@ -25,10 +25,10 @@ requirements:
     - cython
     - numpy
     - pip
-    - python >={{ python_min }}
+    - python
     - setuptools
   run:
-    - python >={{ python_min }}
+    - python
     - affine
     - geojson
     - looseversion
