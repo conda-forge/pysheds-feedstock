@@ -24,8 +24,8 @@ requirements:
   host:
     - cython
     - numpy
-    - python {{ python_min }}
     - pip
+    - python >={{ python_min }}
     - setuptools
   run:
     - python
@@ -47,8 +47,8 @@ test:
     - pysheds.view
     - pysheds.io
   requires:
-    - python {{ python_min }}
     - pip
+    - python
   commands:
     - pip check
 
