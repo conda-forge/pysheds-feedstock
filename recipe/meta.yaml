@@ -10,7 +10,7 @@ source:
   sha256: b56fb478ed3e4194b6d0a0033c66dcdc5dafafd90dbc05ad096ffb450e6a8005
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
@@ -24,8 +24,9 @@ requirements:
   host:
     - cython
     - numpy
-    - python
     - pip
+    - python
+    - setuptools
   run:
     - python
     - affine
@@ -45,6 +46,11 @@ test:
     - pysheds.grid
     - pysheds.view
     - pysheds.io
+  requires:
+    - pip
+    - python
+  commands:
+    - pip check
 
 about:
   home: https://github.com/mdbartos/pysheds
