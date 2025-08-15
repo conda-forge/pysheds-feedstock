@@ -25,7 +25,7 @@ requirements:
     - cython
     - numpy
     - pip
-    - python >={{ python_min }}
+    - python {{ python_min }}
     - setuptools
   run:
     - python
