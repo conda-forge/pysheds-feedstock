@@ -10,22 +10,23 @@ source:
   sha256: b56fb478ed3e4194b6d0a0033c66dcdc5dafafd90dbc05ad096ffb450e6a8005
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
     - {{ stdlib('c') }}
     - {{ compiler('c') }}
-    - python                              # [build_platform != target_platform]
+    - python >={{ python_min }}           # [build_platform != target_platform]
     - cross-python_{{ target_platform }}  # [build_platform != target_platform]
     - cython                              # [build_platform != target_platform]
     - numpy                               # [build_platform != target_platform]
   host:
     - cython
     - numpy
-    - python
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
     - python
     - affine
@@ -45,6 +46,10 @@ test:
     - pysheds.grid
     - pysheds.view
     - pysheds.io
+  requires:
+    - python {{ python_min }}
+  commands:
+    - pip check
 
 about:
   home: https://github.com/mdbartos/pysheds
