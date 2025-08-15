@@ -48,6 +48,7 @@ test:
     - pysheds.io
   requires:
     - python {{ python_min }}
+    - pip
   commands:
     - pip check
 
