@@ -24,11 +24,11 @@ requirements:
   host:
     - cython
     - numpy
-    - pip {{ python }}
-    - python
+    - pip
+    - python >={{ python_min }}
     - setuptools
   run:
-    - python {{ python }}
+    - python >={{ python_min }}
     - affine
     - geojson
     - looseversion
@@ -48,7 +48,7 @@ test:
     - pysheds.io
   requires:
     - pip
-    - python {{ python }}
+    - python
   commands:
     - pip check
 
