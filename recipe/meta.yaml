@@ -17,18 +17,18 @@ requirements:
   build:
     - {{ stdlib('c') }}
     - {{ compiler('c') }}
-    - python {{ python_min }}             # [build_platform != target_platform]
+    - python                              # [build_platform != target_platform]
     - cross-python_{{ target_platform }}  # [build_platform != target_platform]
     - cython                              # [build_platform != target_platform]
     - numpy                               # [build_platform != target_platform]
   host:
     - cython
     - numpy
-    - pip
-    - python {{ python_min }}
+    - pip {{ python }}
+    - python
     - setuptools
   run:
-    - python
+    - python {{ python }}
     - affine
     - geojson
     - looseversion
@@ -48,7 +48,7 @@ test:
     - pysheds.io
   requires:
     - pip
-    - python
+    - python {{ python }}
   commands:
     - pip check
 
